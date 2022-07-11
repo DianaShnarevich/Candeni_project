@@ -10,5 +10,6 @@ urlpatterns = [
     path('comment/', comment, name='comment'),
     path('contact/', contact, name='contact'),
     path('post/<slug:post_slug>/', show_post, name='post'),
+    path('content/<slug:content_slug>/', show_content, name='content'),
     path('category/<int:cat_id>/', show_category, name='category')
 ]

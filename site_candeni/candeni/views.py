@@ -41,8 +41,8 @@ def content(request):
     context = {
         'content': content,
         'menu': menu,
-        'title': 'Главная страница'
-        # 'cat_selected': 0
+        'title': 'Главная страница',
+        'cat_selected': 0
     }
     return render(request, "candeni/postscandeni.html", context=context)
 
@@ -65,6 +65,7 @@ def contact(request):
         # 'cat_selected': 0
     }
     return render(request, "candeni/contact.html", context=context)
+
 
 def show_post(request, post_slug):
     post = get_object_or_404(Furniture, slug=post_slug)
@@ -91,6 +92,18 @@ def show_category(request, cat_id):
         'cat_selected': cat_id
     }
     return render(request, "candeni/index.html", context=context)
+
+
+def show_content(request, content_slug):
+    content = get_object_or_404(Furniture, slug=content_slug)
+
+    context = {
+        'content': content,
+        'menu': menu,
+        'name': content.name,
+        'cat_selected': 1,
+    }
+    return render(request, 'candeni/postscandeni.html', context=context)
 
 
 def pageNotFound(request, exception):
