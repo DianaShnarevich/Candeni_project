@@ -59,8 +59,12 @@ def comment(request):
 
 
 def contact(request):
-    return HttpResponse("Обратная связь")
-
+    context = {
+        'menu': menu,
+        'title': 'Главная страница'
+        # 'cat_selected': 0
+    }
+    return render(request, "candeni/contact.html", context=context)
 
 def show_post(request, post_slug):
     post = get_object_or_404(Furniture, slug=post_slug)

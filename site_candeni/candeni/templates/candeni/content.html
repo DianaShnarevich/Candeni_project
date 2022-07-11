@@ -3,9 +3,12 @@
 {% block content %}
 <h1>{{content.name}}</h1>
 
-{% if content.photo %}
-<p><img class="ing-article-left" src="{{content.photo.url}}"></p>
+{% if c.photo %}
+<p><img class="ing-articale-left" src="{{content.photo.url}}"></p>
 {% endif %}
+
+
+
 
 {{post.content|linebreaks}}
 {% endblock %}
